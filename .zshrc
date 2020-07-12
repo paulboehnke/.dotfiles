@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions z zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions z zsh-syntax-highlighting history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,4 +109,10 @@ eval "$(pyenv virtualenv-init -)"
 #vim keybindings
 bindkey -v
 
+#load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#enable substring search in history for up and down arrows
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+
