@@ -116,3 +116,6 @@ bindkey -v
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
+#add custom shell scripts from the folder .shell-scripts
+for f in ~/.dotfiles/.shell_scripts/*; do source $f; done
+
