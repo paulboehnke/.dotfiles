@@ -92,3 +92,14 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" highlight syntax
+syntax on
+
+set noswapfile
+
+" Search settings
+set hlsearch "highlight all results
+set ignorecase " ignore case in search
+set incsearch "show search as you type
+
+inoremap jk <ESC>
