@@ -103,3 +103,8 @@ set ignorecase " ignore case in search
 set incsearch "show search as you type
 
 inoremap jk <ESC>
+
+" Pydiction 
+filetype plugin on
+let g:pydiction_location = '~/.vim/pydiction_plugin/complete-dict'
+let g:pydiction_menu_height = 6
