@@ -83,14 +83,10 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 set rtp+=/usr/local/opt/fzf
 
 
-" Set tab to 4 spaces
-filetype plugin indent on
 " show existing tab with 4 spaces width
-set tabstop=4
+set tabstop=2
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
+set shiftwidth=2
 
 " highlight syntax
 syntax on
