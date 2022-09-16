@@ -8,7 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +69,7 @@ ZSH_CUSTOM="$HOME/.dotfiles/zsh-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions fasd zsh-syntax-highlighting history-substring-search)
+plugins=(git zsh-autosuggestions fasd zsh-syntax-highlighting history-substring-search zsh-z git-open)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,3 +122,16 @@ for f in ~/.dotfiles/.shell_scripts/*; do source $f; done
 
 #ALIAS
 alias cb="xclip -i -selection clipboard"
+
+#Haskell
+[ -f "/Users/paulb/.ghcup/env" ] && source "/Users/paulb/.ghcup/env" # ghcup-env
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/paulb/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/paulb/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/paulb/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/paulb/google-cloud-sdk/completion.zsh.inc'; fi
