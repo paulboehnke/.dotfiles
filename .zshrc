@@ -65,7 +65,7 @@ ZSH_CUSTOM="$HOME/.dotfiles/zsh-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf-tab zsh-syntax-highlighting history-substring-search git-open zsh-autosuggestions)
+plugins=(git zsh-autosuggestions fasd fzf-tab zsh-syntax-highlighting git-open)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,12 +110,11 @@ export NVM_DIR="$HOME/.nvm"
 # Search backwards and forwards with a pattern
 bindkey -M vicmd '/' history-incremental-pattern-search-backward
 bindkey -M vicmd '?' history-incremental-pattern-search-forward
-# set up for insert mode too
-bindkey -M viins '^R' history-incremental-pattern-search-backward
-bindkey -M viins '^F' history-incremental-pattern-search-forward
 # cycle through history with ^P instead of arrow up
 bindkey "^P" history-search-backward
 
-
 # Load commands specific to this machine and or user
 [ -f ~/.user_specific_zshrc ] && source ~/.user_specific_zshrc
+
+# Use fzf for history search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
