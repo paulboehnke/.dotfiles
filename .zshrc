@@ -84,9 +84,6 @@ eval "$(pyenv virtualenv-init -)"
 #vim keybindings
 bindkey -v
 
-#load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 #enable substring search in history for up and down arrows
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
@@ -118,3 +115,7 @@ bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
 # cycle through history with ^P instead of arrow up
 bindkey "^P" history-search-backward
+
+
+# Load commands specific to this machine and or user
+[ -f ~/.user_specific_zshrc ] && source ~/.user_specific_zshrc
