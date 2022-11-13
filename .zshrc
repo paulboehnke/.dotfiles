@@ -65,7 +65,7 @@ ZSH_CUSTOM="$HOME/.dotfiles/zsh-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd zsh-syntax-highlighting history-substring-search git-open zsh-autosuggestions)
+plugins=(git fzf-tab zsh-syntax-highlighting history-substring-search git-open zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
