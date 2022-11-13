@@ -12,6 +12,13 @@
 Set PATH, MANPATH, etc., for Homebrew. >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)" >> ~/.zprofile
 
+# Install packages with brew
+brew install bat
+brew install tree
+brew install fasd
+brew install fzf
+# ..
+
 # Setup links
 rm ~/.zshrc
 rm ~/.vimrc
