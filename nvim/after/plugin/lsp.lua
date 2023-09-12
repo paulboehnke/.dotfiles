@@ -6,6 +6,9 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
+-- Fix Undefined global 'vim'
+lsp.nvim_workspace()
+
 lsp.setup()
 
 -- You need to setup `cmp` after lsp-zero
