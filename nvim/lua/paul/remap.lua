@@ -30,3 +30,11 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+
+-- pass highlighted db query to dadbod 
+function DBWithRegisterContents()
+    local query = vim.fn.getreg('"')  -- Get the contents of the " register
+    vim.cmd(':DB ' .. string.gsub(query, '\n', ' '))    -- Run the :DB query command with the query
+end
+-- Create the key mapping for <leader>db to call the function
+vim.keymap.set('n', '<leader>db', '<cmd>lua DBWithRegisterContents()<cr>', { noremap = true })

@@ -27,8 +27,12 @@ cmp.setup({
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
   },
-  completion = { completeopt = 'menu,menuone,noinsert'}
+  completion = { completeopt = 'menu,menuone,noinsert'},
 })
+-- append vim-dadbod as source for completion as it otherwise overrides lsp-zero sources
+local cmp_config = cmp.get_config()
+table.insert(cmp_config.sources, { name = "vim-dadbod-completion" })
+cmp.setup(cmp_config)
 
 require('lspconfig').pylsp.setup {
   settings = {

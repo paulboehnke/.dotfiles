@@ -55,5 +55,7 @@ return require('packer').startup(function(use)
 
   --DB
   use 'tpope/vim-dadbod'
+  use 'kristijanhusak/vim-dadbod-completion'
 
+  use 'tpope/vim-sleuth'
 end)
