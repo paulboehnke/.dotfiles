@@ -93,6 +93,7 @@ for f in ~/.dotfiles/.shell_scripts/*; do source $f; done
 
 #ALIAS
 alias cb="xclip -i -selection clipboard"
+alias v="nvim"
 
 #Haskell
 [ -f "/Users/paulb/.ghcup/env" ] && source "/Users/paulb/.ghcup/env" # ghcup-env
