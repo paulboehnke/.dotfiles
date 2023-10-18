@@ -39,3 +39,5 @@ function DBWithRegisterContents()
 end
 -- Create the key mapping for <leader>db to call the function
 vim.keymap.set('n', '<leader>db', '<cmd>lua DBWithRegisterContents()<cr>', { noremap = true })
+
+vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>" )
