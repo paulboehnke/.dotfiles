@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  use "scottmckendry/cyberdream.nvim"
+
   use {
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate'
