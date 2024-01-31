@@ -30,4 +30,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.listchars = { trail = "-" }
+vim.opt.list = true
+
 vim.g.mapleader = " "
