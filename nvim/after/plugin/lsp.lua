@@ -38,9 +38,9 @@ require('lspconfig').pylsp.setup {
   settings = {
     pylsp = {
       plugins = {
-	autopep8 = {enabled = false},
-	pyflakes = {enabled = false},
-	pycodestyle = {enabled = false}
+        autopep8 = {enabled = false},
+        pyflakes = {enabled = false},
+        pycodestyle = {enabled = false}
       },
     },
   },
