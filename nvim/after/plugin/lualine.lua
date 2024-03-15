@@ -1,5 +1,5 @@
 require('lualine').setup {
-  options = { theme  = "16color" },
+  options = { theme  = "tokyonight" },
   sections = {
     lualine_c = {
       {

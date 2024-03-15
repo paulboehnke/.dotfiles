@@ -17,15 +17,15 @@ return require('packer').startup(function(use)
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function() 
-		  vim.cmd('colorscheme rose-pine')
+	  vim.cmd('colorscheme rose-pine')
 	  end
   })
 
-  use "scottmckendry/cyberdream.nvim"
+  use('folke/tokyonight.nvim')
 
   use {
-	  'nvim-treesitter/nvim-treesitter',
-	  run = ':TSUpdate'
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
   use('nvim-treesitter/playground')
 
@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
   use('tpope/vim-surround')
 
   use {
-	  'VonHeikemen/lsp-zero.nvim',
+    'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v2.x',
 	  requires = {
 		  -- LSP Support
