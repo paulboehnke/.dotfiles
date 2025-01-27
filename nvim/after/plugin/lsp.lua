@@ -34,7 +34,11 @@ local cmp_config = cmp.get_config()
 table.insert(cmp_config.sources, { name = "vim-dadbod-completion" })
 cmp.setup(cmp_config)
 
-require('lspconfig').pylsp.setup {
+
+-- Lspconfig
+local lsp_config = require('lspconfig')
+
+lsp_config.pylsp.setup {
   settings = {
     pylsp = {
       plugins = {
@@ -71,7 +75,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-require('lspconfig').ruff_lsp.setup {
+lsp_config.ruff_lsp.setup {
   on_attach = on_attach,
   init_options = {
     settings = {
@@ -79,4 +83,10 @@ require('lspconfig').ruff_lsp.setup {
       args = {},
     }
   }
+}
+
+lsp_config.tsserver.setup {}
+
+lsp_config.emmet_ls.setup {
+	filetyples = {"html", "htmldjango"}
 }

@@ -61,14 +61,22 @@ return require('packer').startup(function(use)
       require('neorg').setup {
         load = {
           ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.norg.concealer"] = {},
+          ["core.concealer"] = {},
+          ["core.completion"] = {
+            config = {
+              engine="nvim-cmp",
+            }
+          },
+          ["core.integrations.treesitter"] = {},
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {
                 notes = "~/work",
               },
+              default_workspace = "notes",
             },
           },
+          ["core.itero"] = {},
         },
       }
     end,

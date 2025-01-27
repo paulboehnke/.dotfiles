@@ -32,6 +32,11 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- start neorg
+vim.keymap.set("n", "<leader>ns", "<cmd>Neorg index<CR>")
+-- close neorg
+vim.keymap.set("n", "<leader>nx", "<cmd>w<CR><cmd>Neorg return<CR>")
+
 
 -- pass highlighted db query to dadbod 
 function DBWithRegisterContents()
@@ -42,3 +47,19 @@ end
 vim.keymap.set('n', '<leader>db', '<cmd>lua DBWithRegisterContents()<cr>', { noremap = true })
 
 vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>" )
+
+-- search all files and load into quickfix list
+vim.keymap.set('n', '<leader>pg', function()
+  local search = vim.fn.input("rg > ")
+  local pattern = vim.fn.input("Pattern > ", "**/*")
+  vim.cmd("silent grep! " .. vim.fn.shellescape(search) .. " " .. pattern)
+  vim.cmd("copen")
+end)
+
+vim.keymap.set("n", "<C-h>", function()
+  vim.cmd("cprev")
+end, { desc = "Go to the previous quickfix entry" })
+
+vim.keymap.set("n", "<C-l>", function()
+  vim.cmd("cnext")
+end, { desc = "Go to the next quickfix entry" })
