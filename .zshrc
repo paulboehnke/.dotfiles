@@ -13,15 +13,18 @@ for f in ~/.dotfiles/.shell_scripts/*; do source $f; done
 alias v="nvim"
 alias l="ls -lah"
 
+# use z to jump around
+. ~/.dotfiles/submodules/z/z.sh
+
 # Use fzf for history search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Setup Pyevn
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-#pyenv installation
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-#pynev-virtualenv
-eval "$(pyenv virtualenv-init -)"
+## Setup Pyevn
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#
+##pyenv installation
+#eval "$(pyenv init --path)"
+#eval "$(pyenv init -)"
+##pynev-virtualenv
+#eval "$(pyenv virtualenv-init -)"
