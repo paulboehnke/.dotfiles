@@ -56,10 +56,3 @@ vim.keymap.set('n', '<leader>pg', function()
   vim.cmd("copen")
 end)
 
-vim.keymap.set("n", "<C-h>", function()
-  vim.cmd("cprev")
-end, { desc = "Go to the previous quickfix entry" })
-
-vim.keymap.set("n", "<C-l>", function()
-  vim.cmd("cnext")
-end, { desc = "Go to the next quickfix entry" })

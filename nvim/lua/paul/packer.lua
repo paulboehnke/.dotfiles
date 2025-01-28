@@ -55,33 +55,4 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-sleuth'
 
-  use {
-    "nvim-neorg/neorg",
-    config = function()
-      require('neorg').setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {},
-          ["core.completion"] = {
-            config = {
-              engine="nvim-cmp",
-            }
-          },
-          ["core.integrations.treesitter"] = {},
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/work",
-              },
-              default_workspace = "notes",
-            },
-          },
-          ["core.itero"] = {},
-        },
-      }
-    end,
-    run = ":Neorg sync-parsers",
-    requires = "nvim-lua/plenary.nvim",
-  }
-
 end)

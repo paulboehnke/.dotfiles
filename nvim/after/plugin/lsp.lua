@@ -75,7 +75,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-lsp_config.ruff_lsp.setup {
+lsp_config.ruff.setup {
   on_attach = on_attach,
   init_options = {
     settings = {
@@ -85,7 +85,7 @@ lsp_config.ruff_lsp.setup {
   }
 }
 
-lsp_config.tsserver.setup {}
+lsp_config.ts_ls.setup {}
 
 lsp_config.emmet_ls.setup {
 	filetyples = {"html", "htmldjango"}
