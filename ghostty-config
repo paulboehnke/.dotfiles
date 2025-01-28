@@ -1,4 +1,8 @@
+# keybinds
 keybind = ctrl+l=goto_split:next
 keybind = ctrl+h=goto_split:previous
+keybind = ctrl+b=toggle_split_zoom
+
 keybind = ctrl+k=scroll_page_up
 keybind = ctrl+j=scroll_page_down
+

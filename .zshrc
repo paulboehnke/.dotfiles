@@ -12,6 +12,12 @@ for f in ~/.dotfiles/.shell_scripts/*; do source $f; done
 #ALIAS
 alias v="nvim"
 alias l="ls -lah"
+alias ..="cd .."
+alias ...="cd ../.."
+# git
+alias gss="git status"
+alias gco="git checkout"
+alias gcb="git checkout -b"
 
 # use z to jump around
 . ~/.dotfiles/submodules/z/z.sh
