@@ -1,8 +1,12 @@
+# theme
+theme = dark:catppuccin-frappe,light:catppuccin-latte
+
 # keybinds
-keybind = ctrl+l=goto_split:next
-keybind = ctrl+h=goto_split:previous
-keybind = ctrl+b=toggle_split_zoom
+keybind = ctrl+a>l=goto_split:next
+keybind = ctrl+a>h=goto_split:previous
+keybind = ctrl+a>b=toggle_split_zoom
 
-keybind = ctrl+k=scroll_page_up
-keybind = ctrl+j=scroll_page_down
+keybind = ctrl+a>u=scroll_page_up
+keybind = ctrl+a>d=scroll_page_down
 
+keybind = ctrl+a>n=clear_screen
