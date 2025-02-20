@@ -6,9 +6,10 @@ bindkey -v
 
 #ALIAS
 alias v="nvim"
-alias l="ls -lah"
+alias l="ls -Glah"
 alias ..="cd .."
 alias ...="cd ../.."
+alias mjml="/Users/Localiser/Code/tools/mjml/node_modules/mjml/bin/mjml"
 # git
 alias gss="git status"
 alias gco="git checkout"
