@@ -32,12 +32,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- start neorg
-vim.keymap.set("n", "<leader>ns", "<cmd>Neorg index<CR>")
--- close neorg
-vim.keymap.set("n", "<leader>nx", "<cmd>w<CR><cmd>Neorg return<CR>")
-
-
 -- pass highlighted db query to dadbod 
 function DBWithRegisterContents()
     local query = vim.fn.getreg('"')  -- Get the contents of the " register
