@@ -35,3 +35,5 @@ alias gcb="git checkout -b"
 for f in ~/.dotfiles/.shell_scripts/*; do source $f; done
 # Load commands specific to this machine and or user
 [ -f ~/.user_specific_zshrc ] && source ~/.user_specific_zshrc
+
+. "$HOME/.local/bin/env"
