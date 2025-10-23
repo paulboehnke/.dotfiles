@@ -40,4 +40,6 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-sleuth'
 
+  use "supermaven-inc/supermaven-nvim"
+
 end)
