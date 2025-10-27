@@ -44,9 +44,22 @@ vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>" )
 
 -- search all files and load into quickfix list
 vim.keymap.set('n', '<leader>pg', function()
-  local search = vim.fn.input("rg > ")
-  local pattern = vim.fn.input("Pattern > ", "**/*")
-  vim.cmd("silent grep! " .. vim.fn.shellescape(search) .. " " .. pattern)
+  local ok, search = pcall(vim.fn.input, "Search: ")
+  if not ok then return end
+  if search == "" then return end
+
+  local types
+  ok, types = pcall(vim.fn.input, "Type(s): ")
+  if not ok then return end
+
+  local type_flags = ""
+  if types ~= "" then
+    types = vim.split(types, " ")
+    for _, t in ipairs(types) do
+      type_flags = type_flags .. " -t " .. t
+    end
+  end
+  vim.cmd("silent grep! " .. vim.fn.shellescape(search) .. " " .. type_flags)
   vim.cmd("copen")
 end)
 

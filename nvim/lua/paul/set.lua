@@ -35,4 +35,4 @@ vim.opt.list = true
 
 vim.g.mapleader = " "
 
-vim.o.grepprg = "rg --vimgrep --smart-case --hidden --glob '!.git/'"
+vim.o.grepprg = "rg --vimgrep --smart-case --glob '!.git/'"
