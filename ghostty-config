@@ -1,5 +1,5 @@
 # theme
-theme = dark:Catppuccin Frappe,light:Catppuccin Latte
+theme = dark:GitHub Dark High Contrast,light:GitHub Light Default
 
 # keybinds
 keybind = ctrl+a>l=goto_split:next

@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use ({ 'projekt0n/github-nvim-theme' })
 
   use {
     'nvim-treesitter/nvim-treesitter',

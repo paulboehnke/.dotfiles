@@ -1,11 +1,3 @@
-require("catppuccin").setup({
-    flavour = "latte", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-        light = "latte",
-        dark = "mocha",
-    }
-  })
+require('github-theme').setup({})
 
-vim.cmd.colorscheme "catppuccin"
-
-vim.o.background = "dark"
+vim.cmd.colorscheme "github_dark_high_contrast"
