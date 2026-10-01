@@ -57,3 +57,26 @@ vim.keymap.set('n', '<leader>pg', function()
   vim.cmd("copen")
 end)
 
+-- search all files and for highlighted string 
+vim.keymap.set('x', '<leader>pg', function()
+  local lines = vim.fn.getregion(vim.fn.getpos('v'), vim.fn.getpos('.'), { type = vim.fn.mode() })
+  if #lines > 1 then
+    vim.notify("Selection must be single line", vim.log.levels.WARN)
+    return
+  end
+  local text = lines[1]
+
+  local ok, types = pcall(vim.fn.input, "Type(s): ")
+  if not ok then return end
+
+  local type_flags = ""
+  if types ~= "" then
+    types = vim.split(types, " ")
+    for _, t in ipairs(types) do
+      type_flags = type_flags .. " -t " .. t
+    end
+  end
+  vim.cmd("silent grep! " .. vim.fn.shellescape(text) .. " " .. type_flags)
+  vim.cmd("copen")
+end)
+
