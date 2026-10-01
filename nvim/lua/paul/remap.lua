@@ -36,16 +36,6 @@ vim.api.nvim_create_user_command('CopyPath', function()
   vim.fn.setreg('+', vim.fn.expand('%'))
 end, {})
 
--- pass highlighted db query to dadbod 
-function DBWithRegisterContents()
-    local query = vim.fn.getreg('"')  -- Get the contents of the " register
-    vim.cmd(':DB ' .. string.gsub(query, '\n', ' '))    -- Run the :DB query command with the query
-end
--- Create the key mapping for <leader>db to call the function
-vim.keymap.set('n', '<leader>db', '<cmd>lua DBWithRegisterContents()<cr>', { noremap = true })
-
-vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>" )
-
 -- search all files and load into quickfix list
 vim.keymap.set('n', '<leader>pg', function()
   local ok, search = pcall(vim.fn.input, "Search: ")
