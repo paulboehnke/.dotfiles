@@ -18,9 +18,6 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  use('nvim-treesitter/playground')
-
-  use('mbbill/undotree')
 
   use('tpope/vim-fugitive')
 
@@ -33,12 +30,6 @@ return require('packer').startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
 
-  --DB
-  use 'tpope/vim-dadbod'
-  use 'kristijanhusak/vim-dadbod-completion'
-
+  -- automatic adjustment of shiftwidth and expandtab based on existing code
   use 'tpope/vim-sleuth'
-
-  use "supermaven-inc/supermaven-nvim"
-
 end)
