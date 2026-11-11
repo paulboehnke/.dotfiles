@@ -5,7 +5,6 @@ PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 bindkey -v
 
 #ALIAS
-alias v="nvim"
 alias l="ls -Glah"
 alias ..="cd .."
 alias ...="cd ../.."

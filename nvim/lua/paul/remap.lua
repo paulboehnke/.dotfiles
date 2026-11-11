@@ -24,10 +24,10 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
@@ -35,16 +35,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.api.nvim_create_user_command('CopyPath', function()
   vim.fn.setreg('+', vim.fn.expand('%'))
 end, {})
-
--- pass highlighted db query to dadbod 
-function DBWithRegisterContents()
-    local query = vim.fn.getreg('"')  -- Get the contents of the " register
-    vim.cmd(':DB ' .. string.gsub(query, '\n', ' '))    -- Run the :DB query command with the query
-end
--- Create the key mapping for <leader>db to call the function
-vim.keymap.set('n', '<leader>db', '<cmd>lua DBWithRegisterContents()<cr>', { noremap = true })
-
-vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>" )
 
 -- search all files and load into quickfix list
 vim.keymap.set('n', '<leader>pg', function()
@@ -64,6 +54,29 @@ vim.keymap.set('n', '<leader>pg', function()
     end
   end
   vim.cmd("silent grep! " .. vim.fn.shellescape(search) .. " " .. type_flags)
+  vim.cmd("copen")
+end)
+
+-- search all files and for highlighted string 
+vim.keymap.set('x', '<leader>pg', function()
+  local lines = vim.fn.getregion(vim.fn.getpos('v'), vim.fn.getpos('.'), { type = vim.fn.mode() })
+  if #lines > 1 then
+    vim.notify("Selection must be single line", vim.log.levels.WARN)
+    return
+  end
+  local text = lines[1]
+
+  local ok, types = pcall(vim.fn.input, "Type(s): ")
+  if not ok then return end
+
+  local type_flags = ""
+  if types ~= "" then
+    types = vim.split(types, " ")
+    for _, t in ipairs(types) do
+      type_flags = type_flags .. " -t " .. t
+    end
+  end
+  vim.cmd("silent grep! " .. vim.fn.shellescape(text) .. " " .. type_flags)
   vim.cmd("copen")
 end)
 
