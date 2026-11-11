@@ -4,6 +4,7 @@ cmp.setup({
   mapping = {
     ['<C-j>'] = cmp.mapping.select_next_item(),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -26,7 +27,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- start language servers
-vim.lsp.enable({'luals', 'ruff', 'pyright'})
+vim.lsp.enable({'luals', 'ruff', 'pyright', 'gopls'})
 
 
 -- set up supermaven
